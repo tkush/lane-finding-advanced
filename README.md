@@ -125,7 +125,7 @@ on to the original image.
 
 ![Lanes found](/images/lanesfound.png)
 
-The resulting video is included in this repo and is located here: /output_video/out.mp4
+The resulting video can be found [here](https://youtu.be/hC0hlfRuxT4).
 
 ### Discussion
 1. Debugging mode
@@ -143,6 +143,7 @@ In this frame, the following information can be found:
 * Radius of curvature (ROC) for both left and right lanes in m
 * % difference in the ROC calculation from the last good measurement
 * Vehicle offset in m
+The debug video can be found [here](https://youtu.be/Ctr4QL98HcY)
 
 #### Areas of improvement and possible failure
 The current approach is tailored to the project video and is not very generalized. The points for perspective
