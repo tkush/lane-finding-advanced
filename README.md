@@ -54,6 +54,7 @@ hardcoded and are listed below:
 `dst_points = np.float32([[300,720],[300,0],[800,0],[800,720]])`
 
 The perspective transform is done within the `frame_lane.py` file in the method `process_frame`.
+
 **Key insight**: To better threshold the image, it was found that taking a perspective transform before
 thresholding the image produced better results. This is because the transformed image contains less
 irrelevant content and so is easier to threshold.
@@ -98,13 +99,17 @@ What is a reliable lane detection? Once a lane has been found for the first time
 in memory and any subsequent lanes found are compared to the previous lanes. If the radius of curvature is
 within some specified tolerance, then the new lane is termed as a reliable detection. To ensure reliable
 detection always, the following logic is used:
+
 **Step 1**: Find lanes through the sliding window approach for the first image in the video stream. Store the fit
 coefficients, x and y pixels identified in lanes and the calculated lane curvatures in the Frame class
+
 **Step 2**: Find lanes in the next image frame through a targeted search within a margin of the previous lanes
 found. If this is a reliable detection, store the lane data into the Frame class. If it is not a reliable detection,
 use the lanes found from the last frame.
+
 **Step 3**: If a reliable lane is not found more than 5 times, force a new detection through the sliding window
 approach. If this method finds a reliable lane, store the lane data for the future.
+
 **Step 4**: Repeat from Step 2.
 When (x,y) pixels are identified as lane candidates, a second order polynomial is fit through these points as y
 = f(x) and this is used to draw the lane lines. The lanes found are shown below:
