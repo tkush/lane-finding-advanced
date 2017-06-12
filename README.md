@@ -109,7 +109,7 @@ approach. If this method finds a reliable lane, store the lane data for the futu
 When (x,y) pixels are identified as lane candidates, a second order polynomial is fit through these points as y
 = f(x) and this is used to draw the lane lines. The lanes found are shown below:
 
-![Lanes detected](/images/lanesdetected.py)
+![Lanes detected](/images/lanesdetected.png)
 
 Once the lane polynomials are identified for both left and right lanes, the radius of curvature is easily
 calculated using the formula presented in the course material. The calculation is done in the method
@@ -123,7 +123,7 @@ An inverse mapping is calculated to map the lane lines back on the original imag
 frame_lane.py at the end of the function process_frame. Below is an example of the lane lines mapped
 on to the original image.
 
-![Lanes found](/images/lanesfound.py)
+![Lanes found](/images/lanesfound.png)
 
 The resulting video is included in this repo and is located here: /output_video/out.mp4
 
@@ -132,7 +132,7 @@ The resulting video is included in this repo and is located here: /output_video/
 To aid in debugging the project I have included code to produce an output video that contains a lot more
 information and is helpful in debugging. Here is a snapshot of the debugging video:
 
-![Debug frame](/images/debug.py)
+![Debug frame](/images/debug.png)
 
 In this frame, the following information can be found:
 * Perspective transformed image (top left)
